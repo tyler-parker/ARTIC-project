@@ -4,9 +4,18 @@ import {
   Box,
   Grid,
   theme,
+  extendTheme
 } from '@chakra-ui/react';
 import Hero from './components/HeroImg';
 import Header from './components/Header';
+
+// const theme = extendTheme({
+//   colors: {
+//     primary: {
+
+//     }
+//   }
+// })
 
 function App() {
   return (
