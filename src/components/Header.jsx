@@ -1,7 +1,6 @@
 import React from 'react'
 import {
     Flex,
-    Link,
     Image,
     HStack
 } from '@chakra-ui/react'
@@ -22,18 +21,18 @@ export default function Header() {
             padding="2rem"
             h="100px"  
         >  
-        <Link>
-          <Image src={Museo} alt="Museo De Piedra" />
-        </Link>
-        <Link isExternal href="https://www.miagallardodesign.com/">
-          <Image src={Butterfly} />
-        </Link>
+            <a>
+            <Image src={Museo} alt="Museo De Piedra" />
+            </a>
+            <a href="https://www.miagallardodesign.com/">
+            <Image src={Butterfly} />
+            </a>
           {/* <ColorModeSwitcher justifySelf="flex-end" /> */}
-          <HStack spacing={5}>
-            <Image src={Exhibits} />
-            <Image src={About} />
-            <Image src={Contact} />
-          </HStack>
+            <HStack spacing={5}>
+                <Image src={Exhibits} />
+                <Image src={About} />
+                <Image src={Contact} />
+            </HStack>
         </Flex>
     )
 }

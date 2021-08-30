@@ -2,15 +2,8 @@ import React from 'react';
 import {
   ChakraProvider,
   Box,
-  Text,
-  Link,
-  VStack,
-  Code,
   Grid,
   theme,
-  Image,
-  Flex,
-  HStack
 } from '@chakra-ui/react';
 import Hero from './components/HeroImg';
 import Header from './components/Header';
@@ -22,9 +15,6 @@ function App() {
         <Grid minH="100vh" >
         <Header />
         <Hero />
-        {/* <Box w="100%" h="5px">
-
-        </Box> */}
         </Grid>
       </Box>
     </ChakraProvider>
