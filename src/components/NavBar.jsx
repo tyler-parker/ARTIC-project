@@ -11,6 +11,13 @@ import Exhibits from '../svg/EXHIBITS.svg'
 import Contact from '../svg/CONTACT.svg'
 import { ColorModeSwitcher } from '../ColorModeSwitcher'
 
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
+
 export default function Header() {
     return (
         <Flex  
@@ -19,17 +26,19 @@ export default function Header() {
             justify="space-between"  
             wrap="wrap"  
             padding="2rem"
-            h="100px"  
+            // h="px"  
         >  
-            <a>
+            <Link to='/'>
             <Image src={Museo} alt="Museo De Piedra" />
-            </a>
+            </Link>
             <a href="https://www.miagallardodesign.com/">
             <Image src={Butterfly} />
             </a>
           {/* <ColorModeSwitcher justifySelf="flex-end" /> */}
             <HStack spacing={5}>
-                <Image src={Exhibits} />
+                <Link to='/exhibits'>
+                    <Image src={Exhibits} />
+                </Link>
                 <Image src={About} />
                 <Image src={Contact} />
             </HStack>
