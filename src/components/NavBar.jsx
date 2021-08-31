@@ -26,13 +26,13 @@ export default function Header() {
             justify="space-between"  
             wrap="wrap"  
             padding="2rem"
-            // h="px"  
+            h="80px"  
         >  
             <Link to='/'>
-            <Image src={Museo} alt="Museo De Piedra" />
+                <Image src={Museo} alt="Museo De Piedra" />
             </Link>
             <a href="https://www.miagallardodesign.com/">
-            <Image src={Butterfly} />
+                <Image src={Butterfly} />
             </a>
           {/* <ColorModeSwitcher justifySelf="flex-end" /> */}
             <HStack spacing={5}>

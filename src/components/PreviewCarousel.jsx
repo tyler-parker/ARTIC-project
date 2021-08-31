@@ -18,7 +18,7 @@ export default function PreviewCarousel(props) {
     return (
         <Box  m={4}>
             <Heading p={8} as='h2' size='2xl'> {props.title} </Heading>
-            <Container maxW='container.xl'>
+            <Container  centerContent maxW="container.xl">
                 <Carousel plugins={[
                     'infinite',
 
