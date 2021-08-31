@@ -6,9 +6,9 @@ import {
   theme,
   extendTheme
 } from '@chakra-ui/react';
-import Hero from './components/HeroImg';
+import Hero from './pages/Hero';
 import NavBar from './components/NavBar';
-import Exhibits from './components/Exhibits';
+import Exhibits from './pages/Exhibits';
 
 import {
   BrowserRouter as Router,
@@ -25,9 +25,7 @@ function App() {
         <NavBar />
         <Switch>
           <Route exact path='/'>
-            <Link to='/exhibits' style={{margin: '0px'}}>
               <Hero />
-            </Link>
           </Route>
           <Route path='/exhibits'>
             <Exhibits />
