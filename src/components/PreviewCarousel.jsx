@@ -16,7 +16,7 @@ import { MdCancel } from 'react-icons/md'
 
 export default function PreviewCarousel(props) {
     return (
-        <Box borderWidth="1px" borderRadius="lg" m={4}>
+        <Box  m={4}>
             <Heading p={8} as='h2' size='2xl'> {props.title} </Heading>
             <Container maxW='container.xl'>
                 <Carousel plugins={[

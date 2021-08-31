@@ -16,14 +16,14 @@ export default function Exhibits() {
     return (
         <>
             <PreviewCarousel 
-                title="Greek & Roman"
+                title="GREEK & ROMAN"
                 img1={greek1}
                 img2={greek2}
                 img3={greek3}
             />
             <Spacer />
             <PreviewCarousel  
-                title="Islamic"
+                title="ISLAMIC"
                 img1={islam1}
                 img2={islam2}
                 img3={islam3}

@@ -9,6 +9,7 @@ import {
 import Hero from './pages/Hero';
 import NavBar from './components/NavBar';
 import Exhibits from './pages/Exhibits';
+import About from './pages/About';
 
 import {
   BrowserRouter as Router,
@@ -29,6 +30,9 @@ function App() {
           </Route>
           <Route path='/exhibits'>
             <Exhibits />
+          </Route>
+          <Route path='/about'>
+            <About />
           </Route>
         </Switch>
         </Grid>
