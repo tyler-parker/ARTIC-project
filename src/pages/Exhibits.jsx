@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import PreviewCarousel from '../components/PreviewCarousel'
 import {
     Spacer
 } from '@chakra-ui/react'
+import axios from 'axios'
 
 export default function Exhibits() {
     const greek1 = "https://images.metmuseum.org/CRDImages/es/original/231613.jpg"
