@@ -3,8 +3,7 @@ import {
   ChakraProvider,
   Box,
   Grid,
-  theme,
-  extendTheme
+  theme
 } from '@chakra-ui/react';
 import Hero from './pages/Hero';
 import NavBar from './components/NavBar';
@@ -12,10 +11,8 @@ import Exhibits from './pages/Exhibits';
 import About from './pages/About';
 
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 function App() {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Carousel, { slidesToShowPlugin, arrowsPlugin } from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 import {
@@ -13,17 +13,8 @@ import {
     RiArrowLeftCircleLine
 } from 'react-icons/ri'
 import { MdCancel } from 'react-icons/md'
-import axios from 'axios'
 
 export default function PreviewCarousel(props) {
-
-    const [deptObjs, setDeptObjs] = useState([])
-
-    function getdeptObjs(deptId){
-        axios.get(`https://collectionapi.metmuseum.org/public/collection/v1/search?departmentId=${deptId}&q="stone"`)
-            .then(res => setDeptObjs(res.data))
-            .catch(err => console.log(err))
-    }
 
     return (
         <Box  m={4}>

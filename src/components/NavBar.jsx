@@ -9,14 +9,9 @@ import About from '../svg/ABOUT.svg'
 import Butterfly from '../svg/butterfly.svg'
 import Exhibits from '../svg/EXHIBITS.svg'
 import Contact from '../svg/CONTACT.svg'
-import { ColorModeSwitcher } from '../ColorModeSwitcher'
+// import { ColorModeSwitcher } from '../ColorModeSwitcher'
 
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-  } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Header() {
     return (

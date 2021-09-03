@@ -14,6 +14,21 @@ export default function Exhibits() {
     const islam2 = "https://images.metmuseum.org/CRDImages/es/original/DP229782.jpg"
     const islam3 = "https://images.metmuseum.org/CRDImages/es/original/DP236917.jpg"
 
+    const [departments, setDepartments] = useState([])
+
+        function getDeptIds(){
+            const deptIds = departments.map(dept => dept.departmentId)
+            axios.get("https://collectionapi.metmuseum.org/public/collection/v1/departments")
+                .then(res => setDepartments(res.data.departments))
+                .then(console.log(deptIds))
+                .catch(err => console.log(err))
+        } 
+
+
+        useEffect(() => {
+            getDeptIds()
+        }, [])
+ 
     return (
         <>
             <PreviewCarousel 
@@ -29,6 +44,7 @@ export default function Exhibits() {
                 img2={islam2}
                 img3={islam3}
             />
+
         </>
     )
 }

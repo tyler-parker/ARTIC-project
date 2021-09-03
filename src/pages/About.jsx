@@ -1,8 +1,7 @@
 import React from 'react'
 import {
     VStack,
-    Image,
-    Box
+    Image
 } from '@chakra-ui/react'
 import Wing from '../svg/WingDesign.svg'
 
