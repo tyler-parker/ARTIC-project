@@ -17,17 +17,20 @@ export default function Exhibits() {
     const [departments, setDepartments] = useState([])
         // get request to pull all department data to use for organizing exhibits
         function getDeptIds(){
-            const deptIds = departments.map(dept => dept.departmentId)
             axios.get("https://collectionapi.metmuseum.org/public/collection/v1/departments")
                 .then(res => setDepartments(res.data.departments))
-                .then(console.log(deptIds))
                 .catch(err => console.log(err))
         } 
-
+        
         useEffect(() => {
             getDeptIds()
         }, [])
  
+        useEffect(() => {
+            const deptIds = departments.map(dept => dept.departmentId)
+            console.log(deptIds);
+        }, [departments])
+        
     return (
         <>  
         {/* // for now just feeding the carousels with static images */}

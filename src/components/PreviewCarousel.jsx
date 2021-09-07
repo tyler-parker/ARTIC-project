@@ -20,7 +20,7 @@ export default function PreviewCarousel(props) {
 
     function getPreviews(){
         axios.get(`https://collectionapi.metmuseum.org/public/collection/v1/search?departmentId=${props.departmentId}&q=''&isHighlight`)
-            .then(res => setPreviews(res))
+            .then(res => setPreviews(res.data))
             .catch(err => console.log(err))
     }
 
