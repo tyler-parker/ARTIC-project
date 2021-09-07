@@ -13,15 +13,23 @@ import {
     RiArrowLeftCircleLine
 } from 'react-icons/ri'
 import { MdCancel } from 'react-icons/md'
+import { axios } from 'axios'
 
 export default function PreviewCarousel(props) {
+    const [previews, setPreviews] = useState([])
+
+    function getPreviews(){
+        axios.get(`https://collectionapi.metmuseum.org/public/collection/v1/search?departmentId=${props.departmentId}&q=''&isHighlight`)
+            .then(res => setPreviews(res))
+            .catch(err => console.log(err))
+    }
 
     return (
         <Box  m={4}>
             <Heading p={8} as='h2' size='2xl'> {props.title} </Heading>
             <Container  centerContent maxW="container.xl">
-                <Carousel plugins={[
-                    'infinite',
+                <Carousel plugins={[    //Carousel from the @brainhubeu/react-carousel library
+                    'infinite',             //link to docs: https://brainhubeu.github.io/react-carousel/docs/examples/customArrows
                     {
                     resolve: slidesToShowPlugin,
                     options: {
@@ -29,7 +37,7 @@ export default function PreviewCarousel(props) {
                     }
                     },
                     {
-                        resolve: arrowsPlugin,
+                        resolve: arrowsPlugin,  //customizing the control arrows
                         options: {
                         arrowLeft: <button><Icon boxSize={10} color='#CA3939' as={RiArrowLeftCircleLine}  name="angle-double-left" /></button>,
                         arrowLeftDisabled:<button><Icon boxSize={10} color='#CA3939' as={MdCancel}  name="angle-left" /></button>,
@@ -39,8 +47,9 @@ export default function PreviewCarousel(props) {
                         }
                     }
                 ]}>
+                    {/* //Plug in images here */}
                     <Box>
-                        <Image boxSize='550px'  src={props.img1} />
+                        <Image boxSize='550px'  src={props.img1} /> 
                         <p className="legend">Legend 1</p>
                     </Box>
                     <Box>

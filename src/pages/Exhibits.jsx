@@ -15,7 +15,7 @@ export default function Exhibits() {
     const islam3 = "https://images.metmuseum.org/CRDImages/es/original/DP236917.jpg"
 
     const [departments, setDepartments] = useState([])
-
+        // get request to pull all department data to use for organizing exhibits
         function getDeptIds(){
             const deptIds = departments.map(dept => dept.departmentId)
             axios.get("https://collectionapi.metmuseum.org/public/collection/v1/departments")
@@ -24,14 +24,14 @@ export default function Exhibits() {
                 .catch(err => console.log(err))
         } 
 
-
         useEffect(() => {
             getDeptIds()
         }, [])
  
     return (
-        <>
-            <PreviewCarousel 
+        <>  
+        {/* // for now just feeding the carousels with static images */}
+        <PreviewCarousel            
                 title="GREEK & ROMAN"
                 img1={greek1}
                 img2={greek2}
