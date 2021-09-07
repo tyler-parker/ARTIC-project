@@ -27,7 +27,7 @@ export default function PreviewCarousel(props) {
     return (
         <Box  m={4}>
             <Heading p={8} as='h2' size='2xl'> {props.title} </Heading>
-            <Container  centerContent maxW="container.xl">
+            <Container  centerContent maxW="container.lg">
                 <Carousel plugins={[    //Carousel from the @brainhubeu/react-carousel library
                     'infinite',             //link to docs: https://brainhubeu.github.io/react-carousel/docs/examples/customArrows
                     {
