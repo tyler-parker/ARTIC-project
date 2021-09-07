@@ -9,23 +9,26 @@ import About from '../svg/ABOUT.svg'
 import Butterfly from '../svg/butterfly.svg'
 import Exhibits from '../svg/EXHIBITS.svg'
 import Contact from '../svg/CONTACT.svg'
-// import { ColorModeSwitcher } from '../ColorModeSwitcher'
+import SideBar from './SideBar'
 
 import { Link } from "react-router-dom";
 
 export default function Header() {
     return (
         <Flex  
-            as="nav"  
+            // as="nav"  
             align="center"  
             justify="space-between"  
             wrap="wrap"  
             padding="2rem"
             h="80px"  
         >  
+        <HStack>
+            <SideBar />
             <Link to='/'>
                 <Image src={Museo} alt="Museo De Piedra" />
             </Link>
+        </HStack>
             <a href="https://www.miagallardodesign.com/">
                 <Image src={Butterfly} />
             </a>
