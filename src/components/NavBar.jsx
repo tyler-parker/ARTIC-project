@@ -37,7 +37,10 @@ export default function Header() {
                 <Link to='/about'>
                     <Image src={About} />
                 </Link>
-                <Image src={Contact} />
+                <Link to='/contact'>
+                    <Image src={Contact} />
+                </Link>
+                
             </HStack>
         </Flex>
     )

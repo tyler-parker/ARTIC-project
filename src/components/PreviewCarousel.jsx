@@ -18,11 +18,7 @@ import { axios } from 'axios'
 export default function PreviewCarousel(props) {
     const [previews, setPreviews] = useState([])
 
-    function getPreviews(){
-        axios.get(`https://collectionapi.metmuseum.org/public/collection/v1/search?departmentId=${props.departmentId}&q=''&isHighlight`)
-            .then(res => setPreviews(res.data))
-            .catch(err => console.log(err))
-    }
+    
 
     return (
         <Box  m={4}>

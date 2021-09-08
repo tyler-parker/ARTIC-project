@@ -15,31 +15,38 @@ export default function Exhibits() {
     const islam3 = "https://images.metmuseum.org/CRDImages/es/original/DP236917.jpg"
 
     const [departments, setDepartments] = useState([])
+    const [highlightedDisplays, setHighlightedDisplays] = useState([])
         // get request to pull all department data to use for organizing exhibits
-        function getDeptIds(){
-            axios.get("https://collectionapi.metmuseum.org/public/collection/v1/departments")
-                .then(res => setDepartments(res.data.departments))
+    function getDeptIds(){
+        axios.get("https://collectionapi.metmuseum.org/public/collection/v1/departments")
+            .then(res => setDepartments(res.data.departments))
+            .catch(err => console.log(err))
+    } 
+    
+    useEffect(() => {
+        getDeptIds()
+    }, [])
+
+    useEffect(() => {
+        const deptIds = departments.map(dept => dept.departmentId)
+        console.log(deptIds);
+        for (let i = 0; i < departments.length; i++) {
+            axios.get(`https://collectionapi.metmuseum.org/public/collection/v1/search?departmentId=${departments[i]}&q=""&isHighlight`)
+                .then(res => setHighlightedDisplays([...highlightedDisplays, res.data]))
                 .catch(err => console.log(err))
-        } 
-        
-        useEffect(() => {
-            getDeptIds()
-        }, [])
- 
-        useEffect(() => {
-            const deptIds = departments.map(dept => dept.departmentId)
-            console.log(deptIds);
-        }, [departments])
+        }
+        console.log("Highlighted Displays: ", highlightedDisplays)
+    }, [departments])
         
     return (
         <>  
-        {/* // for now just feeding the carousels with static images */}
-        <PreviewCarousel            
-                title="GREEK & ROMAN"
-                img1={greek1}
-                img2={greek2}
-                img3={greek3}
-            />
+            {/* // for now just feeding the carousels with static images */}
+            <PreviewCarousel            
+                    title="GREEK & ROMAN"
+                    img1={greek1}
+                    img2={greek2}
+                    img3={greek3}
+                />
             <Spacer />
             <PreviewCarousel  
                 title="ISLAMIC"
