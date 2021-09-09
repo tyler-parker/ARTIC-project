@@ -1,7 +1,6 @@
 import React from 'react'
 import {
     useDisclosure,
-    Button,
     Drawer,
     DrawerOverlay,
     DrawerContent,
@@ -19,10 +18,9 @@ export default function SideBar() {
   
     return (
       <>
-        <IconButton icon={<AiOutlineMenu />} onClick={onOpen} />
+        <IconButton variant="ghost" icon={<AiOutlineMenu />} onClick={onOpen} />
         <Drawer
           isOpen={isOpen}
-          placement="right"
           onClose={onClose}
           placement="left"
         >

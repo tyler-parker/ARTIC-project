@@ -9,6 +9,7 @@ import Hero from './pages/Hero';
 import NavBar from './components/NavBar';
 import Exhibits from './pages/Exhibits';
 import About from './pages/About';
+import Contact from "./pages/Contact"
 
 import {
   Switch,
@@ -20,18 +21,21 @@ function App() {
     <ChakraProvider theme={theme}>
       <Box textAlign="center" fontSize="xl" bgColor="#191919">
         <Grid minH="100vh" >
-        <NavBar />
-        <Switch>
-          <Route exact path='/'>
-              <Hero />
-          </Route>
-          <Route path='/exhibits'>
-            <Exhibits />
-          </Route>
-          <Route path='/about'>
-            <About />
-          </Route>
-        </Switch>
+          <NavBar />
+          <Switch>
+            <Route exact path='/'>
+                <Hero />
+            </Route>
+            <Route path='/exhibits'>
+              <Exhibits />
+            </Route>
+            <Route path='/about'>
+              <About />
+            </Route>
+            <Route path='/contact'>
+              <Contact />
+            </Route>
+          </Switch>
         </Grid>
       </Box>
     </ChakraProvider>
