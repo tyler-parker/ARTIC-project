@@ -35,11 +35,14 @@ export default function Exhibits() {
         <>  
             {/* // for now just feeding the carousels with static images */}
             <PreviewCarousel            
-                    title="ASIA, AFRICA AND THE AMERICAS"
+                title="EUROPEAN"
+                img1="https://images.metmuseum.org/CRDImages/ep/original/DP169640.jpg" //european paintings (11)
+                img2="https://images.metmuseum.org/CRDImages/es/original/DP-14204-187.jpg" //european sculptures and decorative arts (12)
+                img3="" //greek and roman art (13)
             />
             <Spacer />
             <PreviewCarousel  
-                title="EUROPEAN"
+                title="THE REST OF THE WORLD"
             />
             <Spacer />
             <PreviewCarousel  
