@@ -18,16 +18,12 @@ import { axios } from 'axios'
 export default function PreviewCarousel(props) {
     const [previews, setPreviews] = useState([])
 
-    function getPreviews(){
-        axios.get(`https://collectionapi.metmuseum.org/public/collection/v1/search?departmentId=${props.departmentId}&q=''&isHighlight`)
-            .then(res => setPreviews(res.data))
-            .catch(err => console.log(err))
-    }
+    
 
     return (
         <Box  m={4}>
             <Heading p={8} as='h2' size='2xl'> {props.title} </Heading>
-            <Container  centerContent maxW="container.xl">
+            <Container  centerContent maxW="container.lg">
                 <Carousel plugins={[    //Carousel from the @brainhubeu/react-carousel library
                     'infinite',             //link to docs: https://brainhubeu.github.io/react-carousel/docs/examples/customArrows
                     {
