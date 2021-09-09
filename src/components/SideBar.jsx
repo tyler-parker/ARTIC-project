@@ -18,7 +18,7 @@ export default function SideBar() {
   
     return (
       <>
-        <IconButton variant="ghost" icon={<AiOutlineMenu />} onClick={onOpen} />
+        <IconButton color='white' variant="ghost" icon={<AiOutlineMenu />} onClick={onOpen} />
         <Drawer
           isOpen={isOpen}
           onClose={onClose}
@@ -26,11 +26,11 @@ export default function SideBar() {
         >
           <DrawerOverlay />
           <DrawerContent>
-            <DrawerCloseButton />
+            <DrawerCloseButton color='white' />
             <DrawerHeader color='white' bgColor="#191919">Exhibit Categories</DrawerHeader>
   
             <DrawerBody color='white' bgColor="#191919">
-              <Input placeholder="Type here..." />
+                
             </DrawerBody>
   
           </DrawerContent>
