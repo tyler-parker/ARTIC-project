@@ -27,9 +27,9 @@ export default function SideBar() {
           <DrawerOverlay />
           <DrawerContent>
             <DrawerCloseButton />
-            <DrawerHeader bgColor="#191919">Exhibit Categories</DrawerHeader>
+            <DrawerHeader color='white' bgColor="#191919">Exhibit Categories</DrawerHeader>
   
-            <DrawerBody bgColor="#191919">
+            <DrawerBody color='white' bgColor="#191919">
               <Input placeholder="Type here..." />
             </DrawerBody>
   
