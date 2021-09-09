@@ -18,11 +18,15 @@ import { axios } from 'axios'
 export default function PreviewCarousel(props) {
     const [previews, setPreviews] = useState([])
 
-    
+    const pStyles = {
+        color: "white",
+        width: "90%",
+        margin: "0 5% 0 5%"
+    }
 
     return (
         <Box  m={4}>
-            <Heading p={8} as='h2' size='2xl'> {props.title} </Heading>
+            <Heading color='white' p={8} as='h2' size='2xl'> {props.title} </Heading>
             <Container  centerContent maxW="container.lg">
                 <Carousel plugins={[    //Carousel from the @brainhubeu/react-carousel library
                     'infinite',             //link to docs: https://brainhubeu.github.io/react-carousel/docs/examples/customArrows
@@ -46,15 +50,15 @@ export default function PreviewCarousel(props) {
                     {/* //Plug in images here */}
                     <Box>
                         <Image boxSize='550px'  src={props.img1} /> 
-                        <p className="legend">Legend 1</p>
+                        <p style={pStyles} className="legend">Legend 1</p>
                     </Box>
                     <Box>
                         <Image boxSize='550px' src={props.img2} />
-                        <p className="legend">Legend 2</p>
+                        <p style={pStyles} className="legend">Legend 2</p>
                     </Box>
                     <Box>
                         <Image boxSize='550px' src={props.img3} />
-                        <p className="legend">Legend 3</p>
+                        <p style={pStyles} className="legend">Legend 3</p>
                     </Box>
                 </Carousel>
             </Container>

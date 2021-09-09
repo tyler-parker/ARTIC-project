@@ -35,7 +35,7 @@ export default function Exhibits() {
         <>  
             {/* // for now just feeding the carousels with static images */}
             <PreviewCarousel            
-                    title="ASIA, AFRICA AND THE AMERICAS"
+                title="ASIA, AFRICA AND THE AMERICAS"
             />
             <Spacer />
             <PreviewCarousel  
