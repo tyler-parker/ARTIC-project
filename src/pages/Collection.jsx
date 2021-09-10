@@ -16,9 +16,9 @@ export default function Collection(props) {
             .catch(err => console.log(err))
     }
 
-    useEffect(() => {
-        getArtObjects()
-    })
+    // useEffect(() => {
+    //     getArtObjects()
+    // })
 
     const artImages = artObjects.map(obj => <Image src={obj.primaryImage} />)
 

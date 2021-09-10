@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Carousel, { slidesToShowPlugin, arrowsPlugin } from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 import {
@@ -17,7 +17,20 @@ import { axios } from 'axios'
 
 export default function PreviewCarousel(props) {
     const [previews, setPreviews] = useState([])
-
+    const [info, setInfo] = useState([])
+    
+    useEffect(() => {
+        let objectArray = []
+        for (const key in props) {
+            console.log("key: ", key)
+            if (key !== "title") {
+                objectArray.push(props[key])
+            }
+        }
+        const boxes = objectArray.map(department => <Box key={department.title}><Image boxSize='550px' src={department.src} /><p style={pStyles} className="legend">{department.title}</p></Box>)
+        setInfo(boxes)
+    }, [])
+    
     const pStyles = {
         color: "white",
         width: "90%",
@@ -47,21 +60,11 @@ export default function PreviewCarousel(props) {
                         }
                     }
                 ]}>
-                    {/* //Plug in images here */}
-                    <Box>
-                        <Image boxSize='550px'  src={props.img1} /> 
-                        <p style={pStyles} className="legend">Legend 1</p>
-                    </Box>
-                    <Box>
-                        <Image boxSize='550px' src={props.img2} />
-                        <p style={pStyles} className="legend">Legend 2</p>
-                    </Box>
-                    <Box>
-                        <Image boxSize='550px' src={props.img3} />
-                        <p style={pStyles} className="legend">Legend 3</p>
-                    </Box>
+                    {info}
+                    
                 </Carousel>
             </Container>
         </Box>
     )
 }
+//info.map(department => <Box key={department.title}><Image boxSize='550px' src={department.src} /><p style={pStyles} className="legend">{department.title}</p></Box>)
