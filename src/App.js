@@ -10,6 +10,7 @@ import NavBar from './components/NavBar';
 import Exhibits from './pages/Exhibits';
 import About from './pages/About';
 import Contact from "./pages/Contact"
+import Collection from './pages/Collection';
 
 import {
   Switch,
@@ -34,6 +35,9 @@ function App() {
             </Route>
             <Route path='/contact'>
               <Contact />
+            </Route>
+            <Route path='/collection'>
+              <Collection />
             </Route>
           </Switch>
         </Grid>
