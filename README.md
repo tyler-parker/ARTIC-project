@@ -1,3 +1,7 @@
+## Download the import data file here:
+https://github.com/metmuseum/openaccess/blob/master/MetObjects.csv
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
