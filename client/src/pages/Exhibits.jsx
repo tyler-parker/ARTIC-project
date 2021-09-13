@@ -1,24 +1,25 @@
-import React, { useState, useEffect } from 'react'
+// import React, { useState, useEffect } from 'react'
 import PreviewCarousel from '../components/PreviewCarousel'
 import {
     Spacer
 } from '@chakra-ui/react'
-import axios from 'axios'
+// import axios from 'axios'
 
 export default function Exhibits() {
 
-    const [departments, setDepartments] = useState([])
-    const [highlightedDisplays, setHighlightedDisplays] = useState([])
+    // const [departments, setDepartments] = useState([])
+    // const [highlightedDisplays, setHighlightedDisplays] = useState([])
         // get request to pull all department data to use for organizing exhibits
-    function getDeptIds(){
-        axios.get("https://collectionapi.metmuseum.org/public/collection/v1/departments")
-            .then(res => setDepartments(res.data.departments))
-            .catch(err => console.log(err))
-    } 
-    
-    useEffect(() => {
-        getDeptIds()
-    }, [])
+    // function getDeptIds(){
+    //     axios.get("https://collectionapi.metmuseum.org/public/collection/v1/departments")
+    //         .then(res => setDepartments(res.data.departments))
+    //         .catch(err => console.log(err))
+    // } 
+    // useEffect(() => {
+    //     getDeptIds()
+    // }, [])
+
+    // https://www.artic.edu/iiif/2/{identifier}/full/843,/0/default.jpg
 
     /*
     useEffect(() => {

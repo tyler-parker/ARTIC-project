@@ -1,26 +1,25 @@
 import React, { useState, useEffect } from 'react'
 import {
     Heading, 
-    Flex,
+    Grid,
     Image
 } from '@chakra-ui/react'
 import axios from 'axios'
 
 export default function Collection(props) {
     const [objIds, setObjIds] = useState([])
-    const [artObjects, setArtObjects] = useState([])
 
-    function getArtObjects() {
-        axios.get(`https://collectionapi.metmuseum.org/public/collection/v1/objects?departmentIds=1`)
-            .then(res => setArtObjects(res.data))
+    useEffect(() => {
+        axios.get(`https://api.artic.edu/api/v1/artworks/search?q=stone&fields=id,title,image_id,artist_display&limit=20`)
+            .then(res => setObjIds(res.data.data))
             .catch(err => console.log(err))
-    }
+    }, [])
 
-    // useEffect(() => {
-    //     getArtObjects()
-    // })
+    useEffect(() => {
+        console.log(objIds)
+    }, [objIds])
 
-    const artImages = artObjects.map(obj => <Image src={obj.primaryImage} />)
+    const artImages = objIds.map(obj => <Image key={obj.id} src={`https://www.artic.edu/iiif/2/${obj.image_id}/full/843,/0/default.jpg`} />)
 
     return (
         <>
@@ -28,9 +27,9 @@ export default function Collection(props) {
                 Department Collection
             </Heading>
 
-            <Flex>
+            <Grid templateColumns="repeat(3, 1fr)" gap={6}>
                 {artImages}
-            </Flex>
+            </Grid>
         </>
     )
 }

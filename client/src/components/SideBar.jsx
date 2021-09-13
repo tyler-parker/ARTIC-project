@@ -7,8 +7,6 @@ import {
     DrawerCloseButton,
     DrawerHeader,
     DrawerBody,
-    Input,
-    DrawerFooter,
     IconButton
 } from '@chakra-ui/react'
 import { AiOutlineMenu } from 'react-icons/ai'

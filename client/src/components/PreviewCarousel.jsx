@@ -13,11 +13,14 @@ import {
     RiArrowLeftCircleLine
 } from 'react-icons/ri'
 import { MdCancel } from 'react-icons/md'
-import { axios } from 'axios'
 
 export default function PreviewCarousel(props) {
-    const [previews, setPreviews] = useState([])
     const [info, setInfo] = useState([])
+    const pStyles = {
+        color: "white",
+        width: "90%",
+        margin: "0 5% 0 5%"
+    }
     
     useEffect(() => {
         let objectArray = []
@@ -31,11 +34,6 @@ export default function PreviewCarousel(props) {
         setInfo(boxes)
     }, [])
     
-    const pStyles = {
-        color: "white",
-        width: "90%",
-        margin: "0 5% 0 5%"
-    }
 
     return (
         <Box  m={4}>

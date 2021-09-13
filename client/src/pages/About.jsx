@@ -1,8 +1,4 @@
 import React from 'react'
-import {
-    VStack,
-    Image
-} from '@chakra-ui/react'
 import Met from '../svg/metMuseumPhoto.jpg' //By Hugo Schneider - Flickr, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=97399557
 
 export default function About() {

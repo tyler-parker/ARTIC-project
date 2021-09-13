@@ -2,7 +2,8 @@ import React from 'react'
 import {
     Flex,
     Image,
-    HStack
+    HStack,
+    Text
 } from '@chakra-ui/react'
 import Museo from '../svg/MUSEO DE PIEDRA.svg'
 import About from '../svg/ABOUT.svg'
@@ -42,6 +43,11 @@ export default function Header() {
                 </Link>
                 <Link to='/contact'>
                     <Image src={Contact} />
+                </Link>
+                <Link to='/collection'>
+                    <Text>
+                        Collection
+                    </Text>
                 </Link>
                 
             </HStack>
