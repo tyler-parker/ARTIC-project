@@ -7,28 +7,38 @@ import {
 import axios from 'axios'
 
 export default function Collection(props) {
-    const [objIds, setObjIds] = useState([])
+    const [queryObjIds, setQueryObj] = useState([])
+    const [singleObjIds, setSingleObjIds] = useState([])
 
     useEffect(() => {
         axios.get(`https://api.artic.edu/api/v1/artworks/search?q=stone&fields=id,title,image_id,artist_display&limit=20`)
-            .then(res => setObjIds(res.data.data))
+            .then(res => setQueryObj(res.data.data))
             .catch(err => console.log(err))
     }, [])
 
     useEffect(() => {
-        console.log(objIds)
-    }, [objIds])
+        axios.get(`https://api.artic.edu/api/v1/artworks?ids=4453,109467,11625,87451,23365&fields=id,title,image_id`)
+            .then(res => setSingleObjIds(res.data.data))
+            .catch(err => console.log(err))
+    })
 
-    const artImages = objIds.map(obj => <Image key={obj.id} src={`https://www.artic.edu/iiif/2/${obj.image_id}/full/843,/0/default.jpg`} />)
-
+    const queryArtImages = queryObjIds.map(obj => <Image key={obj.id} src={`https://www.artic.edu/iiif/2/${obj.image_id}/full/843,/0/default.jpg`} />)
+    const singleArtImages = singleObjIds.map(obj => <Image key={obj.id} src={`https://www.artic.edu/iiif/2/${obj.image_id}/full/843,/0/default.jpg`} />)
+    
     return (
         <>
             <Heading >
-                Department Collection
+                Queried Collection
             </Heading>
-
             <Grid templateColumns="repeat(3, 1fr)" gap={6}>
-                {artImages}
+                {queryArtImages}
+            </Grid>
+
+            <Heading >
+                Single Collection
+            </Heading>
+            <Grid templateColumns="repeat(3, 1fr)" gap={6}>
+                {singleArtImages}
             </Grid>
         </>
     )
