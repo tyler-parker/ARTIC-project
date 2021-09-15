@@ -25,7 +25,7 @@ export default function About() {
             </p>    
        </>
     )
-}
+} 
 /*
 <VStack >
                 <Image src={Met} alt='Met Museum' w="75%" />
