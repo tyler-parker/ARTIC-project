@@ -27,7 +27,7 @@ export default function Header() {
         <HStack>
             <SideBar />
             <Link to='/'>
-                <Image src={Museo} alt="Museo De Piedra" />
+                <Image src={Museo} alt="Museo De Piedra" target="_blank"/>
             </Link>
         </HStack>
             <a href="https://www.miagallardodesign.com/">
