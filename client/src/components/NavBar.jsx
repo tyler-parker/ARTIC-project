@@ -8,7 +8,7 @@ import {
 import Museo from '../svg/MUSEO DE PIEDRA.svg'
 import About from '../svg/ABOUT.svg'
 import Butterfly from '../svg/butterfly.svg'
-import Exhibits from '../svg/EXHIBITS.svg'
+import Collections from '../svg/COLLECTIONS.svg'
 import Contact from '../svg/CONTACT.svg'
 import SideBar from './SideBar'
 
@@ -35,19 +35,14 @@ export default function Header() {
             </a>
           {/* <ColorModeSwitcher justifySelf="flex-end" /> */}
             <HStack spacing={5}>
-                <Link to='/exhibits'>
-                    <Image src={Exhibits} />
+                <Link to='/collection'>
+                    <Image src={Collections} />
                 </Link>
                 <Link to='/about'>
                     <Image src={About} />
                 </Link>
                 <Link to='/contact'>
                     <Image src={Contact} />
-                </Link>
-                <Link to='/collection'>
-                    <Text>
-                        Collection
-                    </Text>
                 </Link>
                 
             </HStack>
