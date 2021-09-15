@@ -5,3 +5,5 @@ const collectionsRouter = express.Router()
 collectionsRouter.get('/exhibits/:departmentId', (req, res, next) => {
     axios.get('https://collectionapi.metmuseum.org/public/collection/v1/objects')
 })
+
+module.exports = collectionsRouter

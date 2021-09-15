@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "experiments",
   "version": "0.1.0",
   "private": true,
@@ -26,25 +27,30 @@
     "react-transition-group": "^4.4.2",
     "web-vitals": "^0.2.2"
   },
+=======
+  "name": "met-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+>>>>>>> 071ee92ff1087906e00c9881f1ac5ed0f477da2a
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tyler-parker/MET-project.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tyler-parker/MET-project/issues"
+  },
+  "homepage": "https://github.com/tyler-parker/MET-project#readme",
+  "dependencies": {
+    "axios": "^0.21.4",
+    "express": "^4.17.1",
+    "mongoose": "^5.8.1",
+    "morgan": "^1.10.0"
   }
 }
