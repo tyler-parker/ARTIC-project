@@ -30,7 +30,7 @@ export default function Header() {
                 <Image src={Museo} alt="Museo De Piedra" />
             </Link>
         </HStack>
-            <a href="https://www.miagallardodesign.com/">
+            <a href="https://www.miagallardodesign.com/" target="_blank">
                 <Image src={Butterfly} />
             </a>
           {/* <ColorModeSwitcher justifySelf="flex-end" /> */}
