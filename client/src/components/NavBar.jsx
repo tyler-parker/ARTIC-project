@@ -2,8 +2,7 @@ import React from 'react'
 import {
     Flex,
     Image,
-    HStack,
-    Text
+    HStack
 } from '@chakra-ui/react'
 import Museo from '../svg/MUSEO DE PIEDRA.svg'
 import About from '../svg/ABOUT.svg'

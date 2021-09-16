@@ -7,6 +7,7 @@ import {
     Box,
     Text
 } from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Masonry from 'react-masonry-css'
 import './collection.css'
@@ -36,7 +37,15 @@ export default function Collection() {
             .catch(err => console.log(err))
     }, [])
 
-    const queryArtImages = queryObjIds.map(obj => <Image p={2} key={obj.id} src={`https://www.artic.edu/iiif/2/${obj.image_id}/full/843,/0/default.jpg`} />)
+    const queryArtImages = queryObjIds.map(obj => 
+        <Link to={`/artpiece/${obj.id}`}>
+            <Image 
+                p={2} 
+                key={obj.id} 
+                src={`https://www.artic.edu/iiif/2/${obj.image_id}/full/843,/0/default.jpg`} 
+            />
+        </Link>
+        )
 
     return (
         <>
