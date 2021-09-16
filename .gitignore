@@ -25,6 +25,4 @@ yarn-error.log*
 
 /model/MetObjects.csv
 
-.package-lock.json
-.package.json
 .yarn.lock

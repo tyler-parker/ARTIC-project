@@ -16,11 +16,6 @@ import { MdCancel } from 'react-icons/md'
 
 export default function PreviewCarousel(props) {
     const [info, setInfo] = useState([])
-    const pStyles = {
-        color: "white",
-        width: "90%",
-        margin: "0 5% 0 5%"
-    }
     
     useEffect(() => {
         let objectArray = []

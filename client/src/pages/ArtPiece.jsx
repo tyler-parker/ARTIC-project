@@ -22,7 +22,7 @@ export default function ArtPiece() {
     return (
         <>
 
-                <Grid justifyContent='center' templateColumns="1fr 1fr" margin={4}>
+                <Grid justifyContent='center' alignItems='center' templateColumns="1fr 1fr" margin={4}>
                     <GridItem>
                         <Image src={`https://www.artic.edu/iiif/2/${artPiece.image_id}/full/600,/0/default.jpg`} />
                     </GridItem>
