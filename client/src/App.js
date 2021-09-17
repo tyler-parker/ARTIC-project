@@ -12,6 +12,7 @@ import About from './pages/About';
 import Contact from "./pages/Contact"
 import Collection from './pages/Collection';
 import ArtPiece from './pages/ArtPiece';
+import Footer from './components/Footer'
 
 import {
   Switch,
@@ -19,7 +20,7 @@ import {
 } from "react-router-dom";
 
 function App() {
-  
+
 
   return (
     <ChakraProvider theme={theme}>
@@ -46,6 +47,7 @@ function App() {
               <ArtPiece />
             </Route>
           </Switch>
+          <Footer />
         </Grid>
       </Box>
     </ChakraProvider>

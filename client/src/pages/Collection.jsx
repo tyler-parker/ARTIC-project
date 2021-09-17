@@ -5,7 +5,8 @@ import {
     Button,
     HStack,
     Box,
-    Text
+    Text,
+    VStack
 } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
@@ -49,14 +50,14 @@ export default function Collection() {
 
     return (
         <>
-            <Box m={5}>
-                <Text fontSize='xl' fontFamily='Montserrat'   spacing={4}>
+            <VStack m={5} w='100%'>
+                <Text color='white' justifyContent='center'  fontSize='xl' fontFamily='Montserrat'   spacing={4}>
                     Enter search terms
                 </Text>
                 <form onSubmit={handleSubmit}>
                     <HStack justify='center' alignContent='center'>
                         <Input 
-                        w='25%'
+                        w='100%'
                         mt={2}
                         type='text' 
                         name='searchTerm'
@@ -69,7 +70,7 @@ export default function Collection() {
                         </Button>
                     </HStack>
                 </form>
-            </Box>
+            </VStack>
             <Masonry
                 breakpointCols={3}
                 className="my-masonry-grid"

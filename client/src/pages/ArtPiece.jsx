@@ -21,19 +21,17 @@ export default function ArtPiece() {
 
     return (
         <>
-
-                <Grid justifyContent='center' alignItems='center' templateColumns="1fr 1fr" margin={4}>
+                <Grid justifyContent='center' templateColumns="1fr 1fr" margin={4}>
                     <GridItem>
                         <Image src={`https://www.artic.edu/iiif/2/${artPiece.image_id}/full/600,/0/default.jpg`} />
                     </GridItem>
                     <GridItem>
-                        <VStack>
-                            <Text fontSize='3xl' fontFamily='Montserrat'>{artPiece.title}</Text>
-                            <Text fontSize='xl' fontFamily='Montserrat'>{artPiece.artist_display}</Text>
+                        <VStack alignItems='center'>
+                            <Text color='white' fontSize='3xl' fontFamily='Montserrat'>{artPiece.title}</Text>
+                            <Text color='white' fontSize='xl' fontFamily='Montserrat'>{artPiece.artist_display}</Text>
                         </VStack>
                     </GridItem>
                 </Grid>
-
         </>
     )
 }

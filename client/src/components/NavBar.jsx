@@ -4,12 +4,11 @@ import {
     Image,
     HStack
 } from '@chakra-ui/react'
-import Museo from '../svg/MUSEO DE PIEDRA.svg'
+import articNav from '../svg/articNav.svg'
 import About from '../svg/ABOUT.svg'
-import Butterfly from '../svg/butterfly.svg'
 import Collections from '../svg/COLLECTIONS.svg'
 import Contact from '../svg/CONTACT.svg'
-import SideBar from './SideBar'
+import Bust from '../svg/bust.svg'
 
 import { Link } from "react-router-dom";
 
@@ -24,15 +23,11 @@ export default function Header() {
             h="80px"  
         >  
         <HStack>
-            <SideBar />
+            <Image src={Bust} />
             <Link to='/'>
-                <Image src={Museo} alt="Museo De Piedra" target="_blank"/>
+                <Image src={articNav} alt="ARTIC" target="_blank"/>
             </Link>
         </HStack>
-            <a href="https://www.miagallardodesign.com/">
-                <Image src={Butterfly} />
-            </a>
-          {/* <ColorModeSwitcher justifySelf="flex-end" /> */}
             <HStack spacing={5}>
                 <Link to='/collection'>
                     <Image src={Collections} />

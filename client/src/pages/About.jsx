@@ -1,5 +1,5 @@
 import React from 'react'
-// import Artic from '../svg/artic.jpg' //By Beyond My Ken - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=17195009
+import Artic from '../svg/artic.jpg' //By Beyond My Ken - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=17195009
 
 export default function About() {
     const pStyles = {
@@ -16,7 +16,7 @@ export default function About() {
     }
     return (
         <>
-            {/* <img src={Artic} alt='Met Museum' style={imgStyles}/> */}
+            <img src={Artic} alt='Met Museum' style={imgStyles}/>
             <p style={pStyles}>
                 The <a href="https://www.artic.edu/" style={aStyles} target="_blank">Art Institute of Chicago</a> is one of the oldest art
                 museums in America, being founded in 1879. Located in Chicago, it hosts over three hundred thousand pieces of art.

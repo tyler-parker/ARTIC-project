@@ -28,8 +28,8 @@ export default function Contact() {
             </div>
             <div>
                 <h1 style={headerStyles}>Mia Gallardo</h1>
-                <p style={pStyles}>Lorem Ipsum</p>
-                <p style={pStyles}>Contact: email | lorem</p>
+                <p style={pStyles}>Design is credited to Mia who just accepted a job at an exciting new startup. Contact for any contract work.</p>
+                <p style={pStyles}>Contact: miagallardoslc@gmail.com | <a href='https://www.miagallardodesign.com/' style={aStyles}>Portfolio</a></p>
             </div>
         </>
     )
