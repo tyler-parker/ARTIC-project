@@ -50,20 +50,20 @@ export default function Collection() {
 
     return (
         <>
-            <VStack m={5} w='100%'>
-                <Text color='white' justifyContent='center'  fontSize='xl' fontFamily='Montserrat'   spacing={4}>
+            <VStack m={8} alignItems='center'>
+                <Text color='white'  fontSize='3xl' fontFamily='Montserrat'   spacing={4}>
                     Enter search terms
                 </Text>
                 <form onSubmit={handleSubmit}>
-                    <HStack justify='center' alignContent='center'>
+                    <HStack>
                         <Input 
-                        w='100%'
                         mt={2}
                         type='text' 
                         name='searchTerm'
                         placeholder='stone' 
                         value={searchValue.searchTerm} 
                         onChange={handleChange}
+                        size='md'
                         />
                         <Button size='md'>
                             Submit
