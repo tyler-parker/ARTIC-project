@@ -12,8 +12,8 @@ import axios from 'axios'
 export default function ArtPiece() {
     const [artPiece, setArtPiece] = useState({})
     const [artLikes, setArtLikes] = useState(0)
-    const [artContainer, setArtContainer] = useState({})
-    const [dbID, setDBID] = useState()
+    const [artContainer, setArtContainer] = useState([])
+    const dbID = useState("")
     const { id } = useParams()
 
     useEffect(() => {
@@ -21,37 +21,41 @@ export default function ArtPiece() {
             .then(res => setArtPiece(res.data.data))
             .catch(err => console.log(err))
         
-        axios.get(`http://localhost:9000/collections/`)
+        axios.get(`/collections`)
             .then(res => {
-                console.log(res)
-                //setArtContainer(res)
+                console.log("res.data from useEffect:", res.data)
+                var collectionExistsInDB = false
+                for (let i = 0; i < res.data.length; i++) {
+                    if (res.data[i].id == id) {
+                        collectionExistsInDB = true
+                        dbID[0] = res.data[i]._id
+                        break
+                    }
+                }
+                
+                if (collectionExistsInDB) {
+                    console.log('entering if/else statement, getting likes')
+                    axios.get(`http://localhost:9000/collections/${dbID[0]}`) //the problem is right here
+                        .then(res => {
+                            console.log("res from getting single object from db: ", res)
+                            setArtLikes(/*res.data.likes*/)
+                        })
+                        .catch(err => console.log(err))
+                }
+                else {
+                    console.log("entering if/else statement, posting something to db")
+                    axios.post(`/collections`, {id: id, likes: artLikes})
+                }
+                
             })
             .catch(err => console.log(err))
         
-        var collectionExistsInDB = false
-        for (const key in artContainer) {
-            if (artContainer[key].imageID === id) {
-                collectionExistsInDB = true
-                setDBID(artContainer[key]._id)
-                break
-            }
-        }
-        if (!collectionExistsInDB) {
-            axios.post(`http://localhost:9000/collections`, {imageID: id, likes: artLikes})
-        }
-        else {
-            axios.get(`http://localhost:9000/collections/${dbID}`)
-                .then(res => {
-                    console.log("res from getting single object from db: ", res)
-                    setArtLikes(/*res.data.likes*/)
-                })
-                .catch(err => console.log(err))
-        }
+        
         
     }, [])
 
     function like(updates) {
-        axios.put(`http://localhost:9000/collections/${dbID}`, updates)
+        axios.put(`http://localhost:9000/collections/${dbID[0]}`, updates) //the problem is right here
             .then(res => {
                 console.log("Res: ", res, "Res.body: ", res.body)
                 setArtLikes(prevArtLikes => prevArtLikes + 1)

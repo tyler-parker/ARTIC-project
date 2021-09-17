@@ -3,8 +3,7 @@ const Schema = mongoose.Schema
 
 const likeSchema = new Schema({
     id: {
-        type: Number,
-        required: true
+        type: Number
     },
     likes: {
         type: Number

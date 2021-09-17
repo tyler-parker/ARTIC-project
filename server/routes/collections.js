@@ -34,6 +34,19 @@ collectionsRouter.post("/", (req, res, next) => {
     })
 })
 
+collectionsRouter.delete(":/collectionID", (req, res) => {
+    likesModel.findOneAndDelete(
+        {_id: req.params.collectionID},
+        (err) => {
+            if (err) {
+                res.status(500)
+                return next(err)
+            }
+            return res.status(200).send(`Successfully deleted item with id ${req.params.collectionID} from the database.`)
+        }
+    )
+})
+
 collectionsRouter.put("/:collectionID", (req, res, next) => {
     likesModel.findOneAndUpdate(
         {_id: req.params.collectionID},
