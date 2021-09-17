@@ -34,16 +34,15 @@ export default function Collection() {
     }
 
     useEffect(() => {
-        axios.get(`https://api.artic.edu/api/v1/artworks/search?q=stone&fields=id,title,image_id,artist_display&limit=40`)
+        axios.get(`https://api.artic.edu/api/v1/artworks/search?q=cat&fields=id,title,image_id,artist_display&limit=40`)
             .then(res => setQueryObj(res.data.data))
             .catch(err => console.log(err))
     }, [])
 
     const queryArtImages = queryObjIds.map(obj => 
-        <Link to={`/artpiece/${obj.id}`}>
+        <Link to={`/artpiece/${obj.id}`} key={obj.id}>
             <Image 
                 p={2} 
-                key={obj.id} 
                 src={`https://www.artic.edu/iiif/2/${obj.image_id}/full/843,/0/default.jpg`} 
             />
         </Link>

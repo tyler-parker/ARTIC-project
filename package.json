@@ -1,6 +1,6 @@
 {
-  "name": "experiments",
-  "version": "0.1.0",
+  "name": "artic-project",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@brainhubeu/react-carousel": "^2.0.4",
@@ -26,10 +26,6 @@
     "react-transition-group": "^4.4.2",
     "web-vitals": "^0.2.2"
   },
-  "name": "met-project",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -43,11 +39,5 @@
   "bugs": {
     "url": "https://github.com/tyler-parker/MET-project/issues"
   },
-  "homepage": "https://github.com/tyler-parker/MET-project#readme",
-  "dependencies": {
-    "axios": "^0.21.4",
-    "express": "^4.17.1",
-    "mongoose": "^5.8.1",
-    "morgan": "^1.10.0"
-  }
+  "homepage": "https://github.com/tyler-parker/MET-project#readme"
 }
