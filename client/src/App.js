@@ -47,8 +47,8 @@ function App() {
               <ArtPiece />
             </Route>
           </Switch>
-          <Footer />
         </Grid>
+        <Footer />
       </Box>
     </ChakraProvider>
   );
