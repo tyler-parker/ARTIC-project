@@ -26,7 +26,7 @@ export default function Footer() {
                         The Art Institute of Chicago® official website
                     </Link>
                 </HStack>
-                <Link href='https://github.com/tyler-parker/ugly-things' isExternal>
+                <Link href='https://github.com/tyler-parker/MET-project' isExternal>
                         <IconButton color='red'  icon={<VscGithub />} isRound ></IconButton>
                 </Link>
             </Stack>

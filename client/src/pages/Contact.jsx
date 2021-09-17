@@ -8,7 +8,7 @@ export default function Contact() {
     }
     const pStyles = {
         color: "#ffffff",
-        marginBottom: "5%"
+        margin: "5%"
     }
     const aStyles = {
         color: "cornflowerblue"
@@ -19,7 +19,7 @@ export default function Contact() {
             <div style={{marginTop: "5%"}}>
                 <h1 style={headerStyles}>Tyler Parker</h1>
                 <p style={pStyles}>Like most of his friends growing up, Tyler had a love for the computer and video games. It wasn't until after high school when he built his first gaming PC and started playing with mods and servers that he considered going into computer tech for a career. After completing some online coding exercises and becoming more interested in web development, he attended a boot camp with DevPoint Labs in 2015. Although he did not transition into a developer job, his understanding of software processes and concepts landed him a job as a business analyst, where he learned data management in an agile environment. Today he is enrolled in VSchool where he has been learning to make web applications with the Mongo, Express, React, and Node stack in hopes to work on exciting projects!</p>
-                <p style={pStyles}>Contact: email | github</p>
+                <p style={pStyles}>Contact: tparker42d2@gmail.com | <a href='https://github.com/tyler-parker'>Github</a></p>
             </div>
             <div>
                 <h1 style={headerStyles}>Tyler Thomas</h1>
@@ -28,7 +28,7 @@ export default function Contact() {
             </div>
             <div>
                 <h1 style={headerStyles}>Mia Gallardo</h1>
-                <p style={pStyles}>Design is credited to Mia who just accepted a job at an exciting new startup. Contact for any contract work.</p>
+                <p style={pStyles}>Design is credited to Mia who just accepted a job at an exciting new startup. Contact her for any consulting work.</p>
                 <p style={pStyles}>Contact: miagallardoslc@gmail.com | <a href='https://www.miagallardodesign.com/' style={aStyles}>Portfolio</a></p>
             </div>
         </>
