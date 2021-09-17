@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "experiments",
   "version": "0.1.0",
   "private": true,
@@ -27,12 +26,10 @@
     "react-transition-group": "^4.4.2",
     "web-vitals": "^0.2.2"
   },
-=======
   "name": "met-project",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
->>>>>>> 071ee92ff1087906e00c9881f1ac5ed0f477da2a
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -23,7 +23,7 @@ export default function Footer() {
             <Stack direction="row" spacing={4} align="center" justify="space-between">
                 <HStack >
                     <Link src='https://www.artic.edu/'>
-                        The Art Institute of Chicago® official website
+                        Click here for The Art Institute of Chicago® official website
                     </Link>
                 </HStack>
                 <Link href='https://github.com/tyler-parker/MET-project' isExternal>

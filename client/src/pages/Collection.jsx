@@ -4,7 +4,8 @@ import {
     Image,
     Button,
     HStack,
-    Box,
+    InputRightElement,
+    InputGroup,
     Text,
     VStack
 } from '@chakra-ui/react'
@@ -51,25 +52,27 @@ export default function Collection() {
     return (
         <>
             <VStack m={8} alignItems='center'>
-                <Text color='white'  fontSize='3xl' fontFamily='Montserrat'   spacing={4}>
+                <Text color='white'  fontSize='4xl' fontFamily='Montserrat'   spacing={4}>
                     Enter search terms
                 </Text>
                 <form onSubmit={handleSubmit}>
-                    <HStack>
-                        <Input 
-                        mt={2}
-                        type='text' 
-                        name='searchTerm'
-                        placeholder='stone' 
-                        value={searchValue.searchTerm} 
-                        onChange={handleChange}
-                        size='md'
-                        color='white'
-                        />
-                        <Button size='md'>
-                            Submit
-                        </Button>
-                    </HStack>
+                        <InputGroup>
+                            <Input 
+                            w="300px"
+                            type='text' 
+                            name='searchTerm'
+                            placeholder='stone' 
+                            value={searchValue.searchTerm} 
+                            onChange={handleChange}
+                            pr="4.5rem"
+                            color='white'
+                            />
+                            <InputRightElement width="4.5rem">
+                                <Button mr={2} colorScheme='red' h="2rem" size="sm" variant='ghost'>
+                                    Submit
+                                </Button>
+                            </InputRightElement>
+                        </InputGroup>
                 </form>
             </VStack>
             <Masonry
