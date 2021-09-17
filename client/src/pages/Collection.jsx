@@ -64,6 +64,7 @@ export default function Collection() {
                         value={searchValue.searchTerm} 
                         onChange={handleChange}
                         size='md'
+                        color='white'
                         />
                         <Button size='md'>
                             Submit
