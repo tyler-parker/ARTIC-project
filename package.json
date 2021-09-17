@@ -1,7 +1,6 @@
 {
-<<<<<<< HEAD
-  "name": "experiments",
-  "version": "0.1.0",
+  "name": "artic-project",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@brainhubeu/react-carousel": "^2.0.4",
@@ -27,12 +26,6 @@
     "react-transition-group": "^4.4.2",
     "web-vitals": "^0.2.2"
   },
-=======
-  "name": "met-project",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
->>>>>>> 071ee92ff1087906e00c9881f1ac5ed0f477da2a
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
