@@ -6,14 +6,14 @@ const mongoose = require('mongoose')
 app.use(express.json())
 app.use(morgan('dev'))
 
-mongoose.connect('mongodb://localhost:27017/metdb',
+mongoose.connect('mongodb://localhost:27017/articdb',
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useCreateIndex: true,
         useFindAndModify: false
     },
-    () => console.log('Connected to the Met Database!')
+    () => console.log('Connected to the ArtIC Database!')
 )
 
 app.use("/collections", require("./routes/collections.js"))

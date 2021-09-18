@@ -4,9 +4,12 @@ import {
     Image,
     Button,
     HStack,
-    Box,
-    Text
+    InputRightElement,
+    InputGroup,
+    Text,
+    VStack
 } from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Masonry from 'react-masonry-css'
 import './collection.css'
@@ -31,36 +34,46 @@ export default function Collection() {
     }
 
     useEffect(() => {
-        axios.get(`https://api.artic.edu/api/v1/artworks/search?q=stone&fields=id,title,image_id,artist_display&limit=40`)
+        axios.get(`https://api.artic.edu/api/v1/artworks/search?q=cat&fields=id,title,image_id,artist_display&limit=40`)
             .then(res => setQueryObj(res.data.data))
             .catch(err => console.log(err))
     }, [])
 
-    const queryArtImages = queryObjIds.map(obj => <Image p={2} key={obj.id} src={`https://www.artic.edu/iiif/2/${obj.image_id}/full/843,/0/default.jpg`} />)
+    const queryArtImages = queryObjIds.map(obj => 
+        <Link to={`/artpiece/${obj.id}`} key={obj.id}>
+            <Image 
+                p={2} 
+                src={`https://www.artic.edu/iiif/2/${obj.image_id}/full/843,/0/default.jpg`} 
+            />
+        </Link>
+        )
 
     return (
         <>
-            <Box m={5}>
-                <Text fontSize='xl' fontFamily='Montserrat'   spacing={4}>
+            <VStack m={8} alignItems='center'>
+                <Text color='white'  fontSize='4xl' fontFamily='Montserrat'   spacing={4}>
                     Enter search terms
                 </Text>
                 <form onSubmit={handleSubmit}>
-                    <HStack justify='center' alignContent='center'>
-                        <Input 
-                        w='25%'
-                        mt={2}
-                        type='text' 
-                        name='searchTerm'
-                        placeholder='stone' 
-                        value={searchValue.searchTerm} 
-                        onChange={handleChange}
-                        />
-                        <Button size='md'>
-                            Submit
-                        </Button>
-                    </HStack>
+                        <InputGroup>
+                            <Input 
+                            w="300px"
+                            type='text' 
+                            name='searchTerm'
+                            placeholder='stone' 
+                            value={searchValue.searchTerm} 
+                            onChange={handleChange}
+                            pr="4.5rem"
+                            color='white'
+                            />
+                            <InputRightElement width="4.5rem">
+                                <Button mr={2} colorScheme='red' h="2rem" size="sm" variant='ghost'>
+                                    Submit
+                                </Button>
+                            </InputRightElement>
+                        </InputGroup>
                 </form>
-            </Box>
+            </VStack>
             <Masonry
                 breakpointCols={3}
                 className="my-masonry-grid"

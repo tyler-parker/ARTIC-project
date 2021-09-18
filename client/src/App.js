@@ -11,6 +11,8 @@ import Exhibits from './pages/Exhibits';
 import About from './pages/About';
 import Contact from "./pages/Contact"
 import Collection from './pages/Collection';
+import ArtPiece from './pages/ArtPiece';
+import Footer from './components/Footer'
 
 import {
   Switch,
@@ -18,6 +20,8 @@ import {
 } from "react-router-dom";
 
 function App() {
+
+
   return (
     <ChakraProvider theme={theme}>
       <Box textAlign="center" fontSize="xl" bgColor="#191919">
@@ -39,8 +43,12 @@ function App() {
             <Route path='/collection'>
               <Collection />
             </Route>
+            <Route path='/artpiece/:id'>
+              <ArtPiece />
+            </Route>
           </Switch>
         </Grid>
+        <Footer />
       </Box>
     </ChakraProvider>
   );
