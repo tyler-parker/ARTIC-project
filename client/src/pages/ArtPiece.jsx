@@ -93,7 +93,7 @@ export default function ArtPiece() {
                                 fontSize='xl' 
                                 fontFamily='Montserrat'
                             >
-                                {artPiece.classification_titles.join(', ')}
+                                {artPiece.classification_titles}
                             </Text>
                             <Text
                                 color='white' 

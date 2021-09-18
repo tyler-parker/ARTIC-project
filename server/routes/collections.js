@@ -12,7 +12,7 @@ collectionsRouter.get("/", (req, res, next) => {
     })
 })
 
-collectionsRouter.get("/collectionID", (req, res, next) => {
+collectionsRouter.get("/:collectionID", (req, res, next) => {
     likesModel.findOne({_id: req.params.collectionID}, (err, foundArtwork) => {
         if (err) {
             res.status(500)
@@ -39,7 +39,7 @@ collectionsRouter.post("/", (req, res, next) => {
     })
 })
 
-collectionsRouter.delete(":/collectionID", (req, res) => {
+collectionsRouter.delete("/:collectionID", (req, res) => {
     likesModel.findOneAndDelete(
         {_id: req.params.collectionID},
         (err) => {
