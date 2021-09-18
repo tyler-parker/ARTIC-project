@@ -11,16 +11,19 @@ import axios from 'axios'
 
 export default function ArtPiece() {
     const [artPiece, setArtPiece] = useState({})
+    const [classification, setClassification] = useState([])
     const [artLikes, setArtLikes] = useState(0)
     const [artContainer, setArtContainer] = useState([])
     const dbID = useState("")
     const { id } = useParams()
-
+    
     useEffect(() => {
         axios.get(`https://api.artic.edu/api/v1/artworks/${id}`)
-            .then(res => setArtPiece(res.data.data))
-            .catch(err => console.log(err))
-        
+        .then(res => setArtPiece(res.data.data))
+        .catch(err => console.log(err))
+    }, [])
+    
+    useEffect(() => {
         axios.get(`/collections`)
             .then(res => {
                 console.log("res.data from useEffect:", res.data)
@@ -49,9 +52,6 @@ export default function ArtPiece() {
                 
             })
             .catch(err => console.log(err))
-        
-        
-        
     }, [])
 
     function like(updates) {
@@ -76,8 +76,32 @@ export default function ArtPiece() {
                     </GridItem>
                     <GridItem>
                         <VStack alignItems='center' >
-                            <Text color='white' fontSize='3xl' fontFamily='Montserrat'>{artPiece.title}</Text>
-                            <Text color='white' fontSize='xl' fontFamily='Montserrat'>{artPiece.artist_display}</Text>
+                            <Text 
+                            color='white' 
+                            fontSize='3xl' 
+                            fontFamily='Montserrat'>
+                                {artPiece.title} {/* // Title */}
+                            </Text>
+                            <Text 
+                            color='white' 
+                            fontSize='xl' 
+                            fontFamily='Montserrat'>
+                                {artPiece.artist_display} {/* // Artist's name and other info */}
+                            </Text>
+                            <Text
+                                color='white' 
+                                fontSize='xl' 
+                                fontFamily='Montserrat'
+                            >
+                                {artPiece.classification_titles.join(', ')}
+                            </Text>
+                            <Text
+                                color='white' 
+                                fontSize='xl' 
+                                fontFamily='Montserrat'
+                            >
+                                {artPiece.place_of_origin}
+                            </Text>
                         </VStack>
                     </GridItem>
                     <GridItem>

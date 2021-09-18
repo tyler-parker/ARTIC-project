@@ -34,7 +34,7 @@ export default function Collection() {
     }
 
     useEffect(() => {
-        axios.get(`https://api.artic.edu/api/v1/artworks/search?q=cat&fields=id,title,image_id,artist_display&limit=40`)
+        axios.get(`https://api.artic.edu/api/v1/artworks/search?q=stone&fields=id,title,image_id,artist_display&limit=40`)
             .then(res => setQueryObj(res.data.data))
             .catch(err => console.log(err))
     }, [])
@@ -46,12 +46,12 @@ export default function Collection() {
                 src={`https://www.artic.edu/iiif/2/${obj.image_id}/full/843,/0/default.jpg`} 
             />
         </Link>
-        )
+    )
 
     return (
         <>
             <VStack m={8} alignItems='center'>
-                <Text color='white'  fontSize='4xl' fontFamily='Montserrat'   spacing={4}>
+                <Text color='white' fontSize='4xl' fontFamily='Montserrat' spacing={4}>
                     Enter search terms
                 </Text>
                 <form onSubmit={handleSubmit}>
