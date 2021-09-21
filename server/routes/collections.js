@@ -12,15 +12,14 @@ collectionsRouter.get("/", (req, res, next) => {
     })
 })
 
-collectionsRouter.get("/collectionID", (req, res, next) => {
-    const collectionID = req.params.collectionID
-    const foundCollection = likesModel.find(collection => collection._id === collectionID)
-    if (!foundCollection) {
-        const error = new Error(`The collection with id ${collectionID} was not found.`)
-        res.status(500)
-        return next(error)
-    }
-    res.status(200).send(foundCollection)
+collectionsRouter.get("/:collectionID", (req, res, next) => {
+    likesModel.findOne({_id: req.params.collectionID}, (err, foundArtwork) => {
+        if (err) {
+            res.status(500)
+            return next(err)
+        }
+        return res.status(200).send(foundArtwork)
+    })
 })
 
 collectionsRouter.post("/", (req, res, next) => {
@@ -34,7 +33,7 @@ collectionsRouter.post("/", (req, res, next) => {
     })
 })
 
-collectionsRouter.delete(":/collectionID", (req, res) => {
+collectionsRouter.delete("/:collectionID", (req, res) => {
     likesModel.findOneAndDelete(
         {_id: req.params.collectionID},
         (err) => {
