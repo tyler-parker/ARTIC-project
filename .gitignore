@@ -25,5 +25,4 @@ yarn-error.log*
 
 /model/MetObjects.csv
 
-.yarn.lock
 node_modules
