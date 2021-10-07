@@ -1,6 +1,6 @@
 const express = require('express')
 const collectionsRouter = express.Router()
-const likesModel = require('../../model/favorite.js')
+const likesModel = require('../model/favorite.js')
 
 collectionsRouter.get("/", (req, res, next) => {
     likesModel.find((err, collections) => {
