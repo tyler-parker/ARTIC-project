@@ -9,15 +9,15 @@ app.use(morgan('dev'))
 app.use(express.static(path.join(__dirname, "client", "build")))
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
 
-mongoose.connect('mongodb://localhost:27017/articdb',
-    {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        useCreateIndex: true,
-        useFindAndModify: false
-    },
-    () => console.log('Connected to the ArtIC Database!')
-)
+// mongoose.connect('mongodb://localhost:27017/articdb',
+//     {
+//         useNewUrlParser: true,
+//         useUnifiedTopology: true,
+//         useCreateIndex: true,
+//         useFindAndModify: false
+//     },
+//     () => console.log('Connected to the ArtIC Database!')
+// )
 
 app.use("/collections", require("./routes/collections.js"))
 
