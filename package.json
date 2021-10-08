@@ -2,6 +2,9 @@
   "name": "artic-project",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": "14.16.0"
+  },
   "dependencies": {
     "@brainhubeu/react-carousel": "^2.0.4",
     "@chakra-ui/react": "^1.0.0",
