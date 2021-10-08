@@ -7,6 +7,7 @@ const path = require("path")
 app.use(express.json())
 app.use(morgan('dev'))
 app.use(express.static(path.join(__dirname, "client", "build")))
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
 
 mongoose.connect('mongodb://localhost:27017/articdb',
     {
