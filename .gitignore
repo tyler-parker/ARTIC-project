@@ -26,3 +26,4 @@ yarn-error.log*
 /model/MetObjects.csv
 
 node_modules
+node_modules
