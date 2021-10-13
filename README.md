@@ -1,5 +1,12 @@
 ## Starting The App
 
+Begin by starting your MongoDB instance by running:
+`mongod`
+
+Then start up the server with:
+`nodemon server.js`
+
+Finally, `cd` into the `client` folder, then run:
 `npm start`
 
 ## ARTIC Project
