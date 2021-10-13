@@ -19,7 +19,7 @@ Data is being provided through the [ARTIC's Open Access API](https://api.artic.e
 
 ## Features
 
-* worked with a designer to implement the look of the site along with used custome assets 
+* worked with a designer to implement the look of the site along with used custom assets 
 * large Hero landing page
 * a fuzzy search to pull artworks based off of keywords
 * a Mongo DB to store 'favorites' 
